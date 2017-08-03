@@ -3,7 +3,7 @@
   <descriptionCdata><![CDATA[c4c21e42-cd6d-443b-9a18-bfdf8764d98e.10aacec7-e35f-4253-9423-0bbf9a55f5db.description=<pre>This operation iterates through a list of values. It is not recommended to modify the value of the "list" and "separator" inputs during the iteration process.\n\nInputs\:\n    list - The list to iterate through.\n    separator - A delimiter separating the list elements.\nDefault value\: \u2018,\u2019 (comma) \n\nResults\:\n    resultString - The current list element (if the response is "has more").\n\nResponses\:\n    has more - Another value was found in the list and it has been returned.\n    no more - The iterator has gone through the entire list. This response is returned once per list iteration.  A subsequent call to the List iterator operation restarts the list iteration process.\n    failure - The operation completed unsuccessfully.\n\nNote\:\n   The position of the iterator in the list is tracked by each step's unique identifier. Therefore, you can simultaneously iterate through the same list from multiple steps.\n</pre>
 ]]></descriptionCdata>
   <annotation></annotation>
-  <name>test</name>
+  <name>testFlow</name>
   <categories/>
   <inputs/>
   <possibleResponses>
@@ -195,7 +195,22 @@
       <opRef>
         <refId>cd75ca75-e64e-4b1e-9fe9-8dbc76f03865</refId>
       </opRef>
-      <assignments/>
+      <assignments>
+        <flowVariableAssignment id="8acc87f4-dc0d-4852-ae8b-dd017977be47">
+          <annotation></annotation>
+          <name>assignment</name>
+          <action>OVERWRITE</action>
+          <assignmentTargetType>FLOW_VARIABLE</assignmentTargetType>
+          <contextKey>ss</contextKey>
+          <expression id="b085d8c1-a809-4953-a843-8a9e5be6159d">
+            <annotation></annotation>
+            <name>Result Field: result</name>
+            <fieldName>result</fieldName>
+            <sourceType>RAWRESULT</sourceType>
+            <filters/>
+          </expression>
+        </flowVariableAssignment>
+      </assignments>
       <throttleSize>0</throttleSize>
     </step>
     <returnStep id="ff4108ed-064e-4114-811d-2ee1a12c1351">
